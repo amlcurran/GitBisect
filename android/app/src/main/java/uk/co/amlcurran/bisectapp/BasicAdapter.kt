@@ -27,10 +27,11 @@ class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHol
 
     class BasicViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-        val text: TextView = view.findViewById(R.id.list_title) as TextView
+        val titleText: TextView = view.findViewById(R.id.list_title) as TextView
+        val colorText: TextView = view.findViewById(R.id.list_color) as TextView
 
         fun bind(fruit: Fruit) {
-            text.text = fruit.name
+            titleText.text = fruit.name
         }
 
     }
