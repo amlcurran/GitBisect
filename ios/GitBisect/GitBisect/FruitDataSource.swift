@@ -25,6 +25,11 @@ class FruitDataSource: NSObject, UITableViewDataSource {
         let fruit = fruits[indexPath.row]
         cell.textLabel?.text = "\(fruit.name)"
         cell.detailTextLabel?.text = fruit.color
+        if fruit.price > 35 {
+            cell.textLabel?.textColor = .red
+        } else {
+            cell.textLabel?.textColor = .black
+        }
         return cell
     }
 
