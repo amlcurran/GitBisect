@@ -1,5 +1,6 @@
 package uk.co.amlcurran.bisectapp
 
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
 import android.view.LayoutInflater
@@ -33,6 +34,11 @@ class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHol
         fun bind(fruit: Fruit) {
             titleText.text = fruit.name
             colorText.text = fruit.color
+            if (fruit.price > 35) {
+                titleText.setTextColor(Color.RED)
+            } else {
+                titleText.setTextColor(Color.BLACK)
+            }
         }
 
     }
