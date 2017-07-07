@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let fruits = ["Banana", "Apple", "Grapes"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,13 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return fruits.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Foo", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        let fruit = fruits[indexPath.row]
+        cell.textLabel?.text = "\(fruit)"
         return cell
     }
 
