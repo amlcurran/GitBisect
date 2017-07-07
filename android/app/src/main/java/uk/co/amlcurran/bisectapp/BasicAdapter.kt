@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import java.util.*
 
-class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHolder>() {
+class BasicAdapter(fruits: ArrayList<Fruit>, val highPrice: Int) : Adapter<BasicAdapter.BasicViewHolder>() {
 
     private var items: MutableList<Fruit> = fruits
 
@@ -19,7 +19,7 @@ class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHol
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BasicViewHolder {
         val inflated = LayoutInflater.from(parent!!.context).inflate(R.layout.list_item, parent, false)
-        return BasicViewHolder(inflated, 35)
+        return BasicViewHolder(inflated, highPrice)
     }
 
     override fun getItemCount(): Int {
