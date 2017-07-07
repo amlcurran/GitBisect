@@ -19,14 +19,14 @@ class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHol
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BasicViewHolder {
         val inflated = LayoutInflater.from(parent!!.context).inflate(R.layout.list_item, parent, false)
-        return BasicViewHolder(inflated)
+        return BasicViewHolder(inflated, 35)
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    class BasicViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class BasicViewHolder(view: View, val highPrice: Int): RecyclerView.ViewHolder(view) {
 
         val titleText: TextView = view.findViewById(R.id.list_title) as TextView
         val colorText: TextView = view.findViewById(R.id.list_color) as TextView
@@ -34,7 +34,7 @@ class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHol
         fun bind(fruit: Fruit) {
             titleText.text = fruit.name
             colorText.text = fruit.color
-            if (fruit.price > 35) {
+            if (fruit.price > highPrice) {
                 titleText.setTextColor(Color.RED)
             } else {
                 titleText.setTextColor(Color.BLACK)
