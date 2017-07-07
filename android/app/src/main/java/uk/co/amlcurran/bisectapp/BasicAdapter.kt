@@ -37,6 +37,7 @@ class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHol
 
     fun addFruits(newFruits: Array<Fruit>) {
         items.addAll(newFruits)
+        notifyDataSetChanged()
     }
 
 }
