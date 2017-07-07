@@ -6,16 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import java.util.*
 
-class BasicAdapter : Adapter<BasicAdapter.BasicViewHolder>() {
+class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHolder>() {
 
-    private var items: Array<Fruit> = arrayOf(
-            Fruit("Banana", 20, "Yellow", null),
-            Fruit("Apple", 10, "Green", 0.1),
-            Fruit("Apple", 12, "Red", 0.2),
-            Fruit("Kiwi", 35, "Brown", 0.1),
-            Fruit("Watermelon", 100, "Green", 1.2)
-    )
+    private var items: MutableList<Fruit> = fruits
 
     override fun onBindViewHolder(holder: BasicViewHolder?, position: Int) {
         holder?.bind(items[position])
@@ -38,6 +33,10 @@ class BasicAdapter : Adapter<BasicAdapter.BasicViewHolder>() {
             text.text = fruit.name
         }
 
+    }
+
+    fun addFruits(newFruits: Array<Fruit>) {
+        items.addAll(newFruits)
     }
 
 }

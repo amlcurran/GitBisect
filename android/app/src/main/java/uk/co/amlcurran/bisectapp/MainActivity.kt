@@ -12,7 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val recyclerView = findViewById(R.id.recycler) as RecyclerView
-        recyclerView.adapter = BasicAdapter()
+        val basicAdapter = BasicAdapter(arrayListOf(Fruit("Apple", 20, "Red", 0.1), Fruit("Banana", 25, "Yellow", null)))
+        recyclerView.adapter = basicAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        basicAdapter.addFruits(arrayOf(Fruit("Peach", 32, "Yellow?", null), Fruit("Grapes", 50, "Green", 0.1)))
     }
+
 }
