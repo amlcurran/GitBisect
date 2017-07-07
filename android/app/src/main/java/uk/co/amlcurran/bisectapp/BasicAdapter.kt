@@ -9,7 +9,13 @@ import android.widget.TextView
 
 class BasicAdapter : Adapter<BasicAdapter.BasicViewHolder>() {
 
-    private var items: Array<String> = arrayOf("Hello", "How", "Are", "You")
+    private var items: Array<Fruit> = arrayOf(
+            Fruit("Banana", 20, "Yellow", null),
+            Fruit("Apple", 10, "Green", 0.1),
+            Fruit("Apple", 12, "Red", 0.2),
+            Fruit("Kiwi", 35, "Brown", 0.1),
+            Fruit("Watermelon", 100, "Green", 1.2)
+    )
 
     override fun onBindViewHolder(holder: BasicViewHolder?, position: Int) {
         holder?.bind(items[position])
@@ -28,8 +34,8 @@ class BasicAdapter : Adapter<BasicAdapter.BasicViewHolder>() {
 
         val text: TextView = view.findViewById(R.id.list_title) as TextView
 
-        fun bind(string: String) {
-            text.text = string
+        fun bind(fruit: Fruit) {
+            text.text = fruit.name
         }
 
     }
