@@ -32,12 +32,13 @@ class BasicAdapter(fruits: ArrayList<Fruit>) : Adapter<BasicAdapter.BasicViewHol
 
         fun bind(fruit: Fruit) {
             titleText.text = fruit.name
+            colorText.text = fruit.color
         }
 
     }
 
     fun addFruits(newFruits: Array<Fruit>) {
-        items.addAll(newFruits)
+        items = newFruits.toMutableList()
         notifyDataSetChanged()
     }
 
