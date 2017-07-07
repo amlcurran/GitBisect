@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         Fruit(name: "Apple", price: 13, color: "Red", weight: nil),
         Fruit(name: "Watermelon", price: 130, color: "Green", weight: nil)
     ]
-    let dataSource = FruitDataSource(fruits: ViewController.fruits)
+    let dataSource = FruitDataSource(fruits: ViewController.fruits, highPrice: 35)
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,9 +11,11 @@ import UIKit
 class FruitDataSource: NSObject, UITableViewDataSource {
 
     private var fruits: [Fruit]
+    private let highPrice: Int
 
-    init(fruits: [Fruit]) {
+    init(fruits: [Fruit], highPrice: Int) {
         self.fruits = fruits
+        self.highPrice = highPrice
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
