@@ -24,11 +24,12 @@ class FruitDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Foo", for: indexPath)
         let fruit = fruits[indexPath.row]
         cell.textLabel?.text = "\(fruit.name)"
+        cell.detailTextLabel?.text = fruit.color
         return cell
     }
 
     func update(with newFruits: [Fruit]) {
-        self.fruits += newFruits
+        self.fruits = newFruits
     }
 
 }
