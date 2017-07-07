@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Foo")
+        tableView.register(BasicCell.self, forCellReuseIdentifier: "Foo")
         tableView.dataSource = self
     }
 
@@ -43,6 +43,18 @@ extension ViewController: UITableViewDataSource {
         let fruit = fruits[indexPath.row]
         cell.textLabel?.text = "\(fruit.name)"
         return cell
+    }
+
+}
+
+class BasicCell: UITableViewCell {
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
