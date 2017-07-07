@@ -25,6 +25,15 @@ class ViewController: UIViewController {
         tableView.dataSource = dataSource
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataSource.update(with: [
+            Fruit(name: "Grapes", price: 53, color: "Green", weight: nil),
+            Fruit(name: "Kiwi", price: 32, color: "Brown", weight: 0.1)
+        ])
+        tableView.reloadData()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

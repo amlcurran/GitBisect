@@ -27,4 +27,8 @@ class FruitDataSource: NSObject, UITableViewDataSource {
         return cell
     }
 
+    func update(with newFruits: [Fruit]) {
+        self.fruits += newFruits
+    }
+
 }
